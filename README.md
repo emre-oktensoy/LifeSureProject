@@ -20,7 +20,7 @@ Veritabanı tabanlı modelleme ile güçlü veri erişimi ve yönetimi.
 Mobil ve tablet uyumlu kullanıcı arayüzüyle her cihazda sorunsuz deneyim.
 
 🔐 Gelişmiş Admin Panel
-Dinamik içerik, dil ve kullanıcı yönetimi için kullanıcı dostu yönetim arayüzü.
+Dinamik içerik ve dil yönetimi için kullanıcı dostu yönetim arayüzü.
 
 
 
