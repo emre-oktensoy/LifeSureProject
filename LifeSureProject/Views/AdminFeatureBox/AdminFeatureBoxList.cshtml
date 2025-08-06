@@ -1,0 +1,33 @@
+﻿
+@model List<LifeSureProject.Models.DataModels.TblFeatureBox>
+@{
+    ViewBag.Title = "AdminFeatureBoxList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container">
+    <br />
+    <br />
+    <h1>Özellikler Box İçeriği</h1>
+    <table class="table table-hover">
+        <tr>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Image Açıklama</th>
+            <th>Güncelleme</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.ImageUrl</td>
+                <td><a href="/AdminFeatureBox/UpdateAdminFeatureBox/@item.FeatureBoxID" class="btn btn-primary"> Güncelle</a></td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+

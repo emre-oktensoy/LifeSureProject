@@ -1,0 +1,27 @@
+﻿@model LifeSureProject.Models.DataModels.TblService
+
+@{
+    ViewBag.Title = "AdminServiceList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <br />
+    <br />
+    <h1>Hizmetler Sayfası İçeriği</h1>
+    <table class="table table-hover">
+        <tr>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Güncelleme</th>
+        </tr>
+        <tr>
+            <td>@Model.Title</td>
+            <td>@Model.Description</td>
+            <td><a href="/AdminService/UpdateAdminService/@Model.ServiceId" class="btn btn-primary"> Güncelle</a></td>
+        </tr>
+
+    </table>
+
+</div>
+

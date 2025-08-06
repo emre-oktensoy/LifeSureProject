@@ -1,0 +1,24 @@
+﻿@model LifeSureProject.Models.DataModels.TblFeatureBox
+
+@{
+    ViewBag.Title = "UpdateAdminFeatureBox";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Özellik Box Güncelleme</h2>
+
+<form method="post">
+    <input type="hidden" name="FeatureBoxID" value="@Model.FeatureBoxID" />
+    <br />
+    <label>Başlık</label>
+    <input for="Title" type="text" name="Title" value="@Model.Title" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Açıklama</label>
+    <input for="Description" type="text" name="Description" value="@Model.Description" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Image Özellik</label>
+    <input for="ImageUrl" type="text" name="ImageUrl" value="@Model.ImageUrl" class="form-control" style="border:1px solid black" />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>

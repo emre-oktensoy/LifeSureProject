@@ -1,0 +1,33 @@
+﻿@model LifeSureProject.ViewModel.ImageGenViewModel
+
+@{
+    ViewBag.Title = "Hugging Face - Resim Üretici";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hugging Face - Resim Üretici</h2>
+
+@using (Html.BeginForm("Index", "ImageGen", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(m => m.Prompt)
+        @Html.TextBoxFor(m => m.Prompt, new { @class = "form-control", placeholder = "Örnek: A cat playing piano", style = "width: 300px;" })
+        <button type="submit" class="btn btn-primary mt-2">Resim Üret</button>
+    </div>
+}
+
+<hr />
+
+@if (!string.IsNullOrEmpty(Model.ImagePath))
+{
+    <h4>Sunucuda Kaydedilen Resim:</h4>
+    <img src="@Model.ImagePath" style="max-width:400px;" />
+    <br />
+    <a href="@Model.ImagePath" download class="btn btn-success mt-2">Resmi İndir</a>
+}
+
+@if (!string.IsNullOrEmpty(Model.Error))
+{
+    <p style="color:red;">@Model.Error</p>
+}

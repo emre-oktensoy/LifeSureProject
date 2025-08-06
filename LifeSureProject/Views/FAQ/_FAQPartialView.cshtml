@@ -1,0 +1,58 @@
+﻿@model List<LifeSureProject.Models.DataModels.TblFAQ>
+
+@{
+    int count = Model.Count();
+    int x = 1;
+}
+
+<!-- FAQs Start -->
+<div class="container-fluid faq-section bg-light py-5">
+    <div class="container py-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="h-100">
+                    <div class="mb-5">
+                        <h4 class="text-primary">@Resources.Resource.SomeImportantFAQ</h4>
+                        <h1 class="display-4 mb-0">@Resources.Resource.CommonFAQ</h1>
+                    </div>
+
+                    @for (int i = 0; i < Model.Count; i++)
+                    {
+                        var item = Model[i];
+                        string suffix = i.ToString(); // Ya da "One", "Two", "Three"
+
+                        string headingId = "heading" + suffix;
+                        string collapseId = "collapse" + suffix;
+                        string collapseClass = (i == 0) ? "accordion-collapse collapse show" : "accordion-collapse collapse";
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="@headingId">
+                                <button class="accordion-button @(i == 0 ? "" : "collapsed")"
+                                        type="button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#@collapseId"
+                                        aria-expanded="@(i == 0 ? "true" : "false")"
+                                        aria-controls="@collapseId">
+                                    Q: @item.Question
+                                </button>
+                            </h2>
+                            <div id="@collapseId"
+                                 class="@collapseClass"
+                                 aria-labelledby="@headingId"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    A: @item.Answer
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+            <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
+                <img src="/Content/LifeSure-1.0.0/img/carousel-2.png" class="img-fluid w-100" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FAQs End -->

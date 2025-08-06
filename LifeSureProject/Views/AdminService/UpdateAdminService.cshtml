@@ -1,0 +1,21 @@
+﻿@model LifeSureProject.Models.DataModels.TblService
+
+@{
+    ViewBag.Title = "UpdateAdminService";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hizmetler Güncelleme</h2>
+
+<form method="post">
+    <input type="hidden" name="ServiceId" value="@Model.ServiceId" />
+    <br />
+    <label>Başlık</label>
+    <input for="Title" type="text" name="Title" value="@Model.Title" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Açıklama</label>
+    <input for="Description" type="text" name="Description" value="@Model.Description" class="form-control" style="border:1px solid black" />
+    <br />    
+    <button class="btn btn-success">Güncelle</button>
+</form>
+

@@ -1,0 +1,21 @@
+﻿@model LifeSureProject.Models.DataModels.TblAboutBox
+
+@{
+    ViewBag.Title = "UpdateAdminBoxAbout";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkımızda Box Güncelleme</h2>
+
+<form method="post">
+    <input type="hidden" name="AboutBoxID" value="@Model.AboutBoxID" />
+    <br />
+    <label>Başlık</label>
+    <input for="Title" type="text" name="Title" value="@Model.Title" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Açıklama</label>
+    <input for="Count" type="text" name="Count" value="@Model.Count" class="form-control" style="border:1px solid black" />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
+

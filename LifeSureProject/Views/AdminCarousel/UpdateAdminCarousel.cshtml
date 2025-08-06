@@ -1,0 +1,36 @@
+﻿@model LifeSureProject.Models.DataModels.TblCarousel
+
+
+@{
+    ViewBag.Title = "UpdateAdminCarousel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Açılış Sayfası Güncelleme</h2>
+
+<form method="post">
+    <input type="hidden" name="CarouselId" value="@Model.CarouselId" />
+    <br />
+    <label>Kısa Başlık</label>
+    <input for="Heading" type="text" name="Heading" value="@Model.Heading" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Başlık</label>
+    <input for="Title" type="text" name="Title" value="@Model.Title" class="form-control" style="border:1px solid black" />
+    <br />        
+    <label>Açıklama</label>
+    <textarea for="Description" name="Description" class="form-control" style="border:1px solid black" rows="5">@Model.Description</textarea>
+    <br />
+    <label>Kısa Başlık İngilizce</label>
+    <input type="text" for="Heading_EN" name="Heading_EN" value="@Model.Heading_EN" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Başlık İngilizce</label>
+    <input type="text" for="Title_EN" name="Title_EN" value="@Model.Title_EN" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Açıklama İngilizce</label>
+    <textarea for="Description_EN"  name="Description_EN" class="form-control" style="border:1px solid black" rows="5">@Model.Description_EN</textarea>
+    <br />
+
+    <button class="btn btn-success">Güncelle</button>
+</form>
+
+

@@ -1,0 +1,33 @@
+﻿@model List<LifeSureProject.Models.DataModels.TblServiceBox>
+
+@{
+    ViewBag.Title = "AdminServiceBoxList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <br />
+    <br />
+    <h1>Servis Box İçeriği</h1>
+    <table class="table table-hover">
+        <tr>
+
+            <th>Başlık</th>
+            <th>Açıklama</th>           
+            <th>Resim Yolu</th>
+            <th>Güncelleme</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Description</td>
+                <td>@item.ImageUrl</td>               
+                <td><a href="/AdminOpenImage/UpdateAdminServiceBox/@item.ServiceBoxID" class="btn btn-primary">Güncelle</a></td>
+            </tr>
+        }
+
+    </table>
+
+</div>

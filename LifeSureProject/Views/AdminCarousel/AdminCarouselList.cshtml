@@ -1,0 +1,37 @@
+﻿@model LifeSureProject.Models.DataModels.TblCarousel
+
+@{
+    ViewBag.Title = "AdminCarouselList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <br />
+    <br />
+    <h1>Açılış Sayfası İçeriği</h1>
+    <table class="table table-hover">
+        <tr>
+
+            <th>Kısa Başlık</th>
+            <th>Başlık</th>
+            <th>Açıklama</th>
+            <th>Kısa Başlık-İngilizce</th>
+            <th>Başlık-İngilizce</th>
+            <th>Açıklama-İngilizce</th>
+            <th>Güncelleme</th>
+        </tr>
+       
+            <tr>
+                <td>@Model.Heading</td>
+                <td>@Model.Title</td>
+                <td>@Model.Description</td>
+                <td>@Model.Heading_EN</td>
+                <td>@Model.Title_EN</td>
+                <td>@Model.Description_EN</td>                
+                <td><a href="/AdminCarousel/UpdateAdminCarousel/@Model.CarouselId" class="btn btn-primary"> Güncelle</a></td>
+            </tr>
+        
+    </table>
+
+</div>
+

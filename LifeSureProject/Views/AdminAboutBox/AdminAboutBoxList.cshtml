@@ -1,0 +1,30 @@
+﻿@model List<LifeSureProject.Models.DataModels.TblAboutBox>
+
+@{
+    ViewBag.Title = "AdminAboutBoxList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="container">
+    <br />
+    <br />
+    <h1>Hakkımızda Box İçeriği</h1>
+    <table class="table table-hover">
+        <tr>
+            <th>Başlık</th>
+            <th>Sayı</th>
+            <th>Güncelleme</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.Count</td>
+                <td><a href="/AdminAboutBox/UpdateAdminAboutBox/@item.AboutBoxID" class="btn btn-primary"> Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    
+</div>

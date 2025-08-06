@@ -1,0 +1,27 @@
+﻿@model LifeSureProject.Models.DataModels.TblAbout
+
+<!-- About Start -->
+<div class="container-fluid bg-light about pb-5">
+    <div class="container pb-5">
+        <div class="row g-5">
+            <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                <div class="about-item-content bg-white rounded p-5 h-100">
+                    <h4 class="text-primary">@Resources.Resource.AboutOurCompany</h4>
+                    <h1 class="display-4 mb-4">@Model.Title</h1>
+                    <p>
+                        @Model.Description
+                    </p>
+                    <p>
+                       
+                    </p>
+                    <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>@Resources.Resource.WeCanSaveYourMoney</p>
+                    <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>@Resources.Resource.ProductionGood</p>
+                    <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>@Resources.Resource.InsuranceFlexible</p>
+                    <a class="btn btn-primary rounded-pill py-3 px-5" href="#">@Resources.Resource.MoreInformation</a>
+                </div>
+            </div>
+            @Html.Action("AboutBoxPartialDefault", "About")
+        </div>
+    </div>
+</div>
+<!-- About End -->

@@ -1,0 +1,83 @@
+﻿@*@{
+        ViewBag.Title = "Görsel Üret";
+        Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    }
+
+    <h2>Görsel Üretici</h2>
+
+    @using (Html.BeginForm("Index", "AdminOpenImage", FormMethod.Post))
+    {
+        <label>Konu giriniz (Türkçe):</label>
+        <br />
+        <input type="text" name="konu" class="form-control" />
+        <br />
+        <button type="submit" class="btn btn-primary">Görsel Üret</button>
+    }
+
+    @if (ViewBag.Error != null)
+    {
+        <div style="color:red">@ViewBag.Error</div>
+    }
+
+    @if (ViewBag.ImageUrl != null)
+    {
+        <h4>Oluşturulan Görsel:</h4>
+        <img src="@ViewBag.ImageUrl" width="400" />
+    }
+
+    @if (ViewBag.RawJson != null)
+    {
+        <h4>Ham JSON Yanıtı:</h4>
+        <pre>@ViewBag.RawJson</pre>
+    }*@
+
+@{
+    ViewBag.Title = "Görsel Üret";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    var returnUrl = ViewBag.ReturnUrl as string;
+}
+
+<h2>Görsel Üretici</h2>
+
+@using (Html.BeginForm("Index", "AdminOpenImage", FormMethod.Post, new { @class = "form" }))
+{
+    <label>Konu giriniz (Türkçe):</label>
+    <input type="text" name="konu" class="form-control" required />
+
+    @* returnUrl varsa, form ile taşı *@
+    if (!string.IsNullOrEmpty(returnUrl))
+    {
+        <input type="hidden" name="returnUrl" value="@returnUrl" />
+    }
+
+    <br />
+    <button type="submit" class="btn btn-primary">Görsel Üret</button>
+}
+
+<hr />
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+@if (ViewBag.ImageUrl != null)
+{
+    <h4>Oluşturulan Görsel:</h4>
+    <img src="@ViewBag.ImageUrl" width="400" class="img-thumbnail" />
+
+    @* Redirect linki varsa buton göster *@
+    if (!string.IsNullOrEmpty(ViewBag.RedirectUrl as string))
+    {
+        <br />
+        <a href="@ViewBag.RedirectUrl" class="btn btn-success mt-3">
+            Görseli Kullan ve Geri Dön
+        </a>
+    }
+}
+
+@if (ViewBag.RawJson != null)
+{
+    <h4>Ham JSON Yanıtı:</h4>
+    <pre>@ViewBag.RawJson</pre>
+}

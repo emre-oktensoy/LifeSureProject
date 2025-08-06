@@ -1,0 +1,23 @@
+﻿@model LifeSureProject.Models.DataModels.TblFAQ
+
+
+@{
+    ViewBag.Title = "UpdateAdminServiceBox";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <h2>Sık Sorulan Sorulad Sayfası Güncelleme</h2>
+
+    <form method="post">
+        <input type="hidden" name="FAQId" value="@Model.FAQId" />
+        <br />
+        <label>Soru</label>
+        <input for="Question" type="text" name="Question" value="@Model.Question" class="form-control" style="border:1px solid black" />
+        <br />
+        <label>Cevap</label>
+        <textarea for="Answer" name="Answer" class="form-control" style="border:1px solid black" rows="5">@Model.Answer</textarea>
+        <br />
+        <a href="@Url.Action("Index", "AdminQA")" class="btn btn-primary">Soru Cevap Oluştur</a>
+        <button class="btn btn-success">Güncelle</button>
+    </form>
+ 

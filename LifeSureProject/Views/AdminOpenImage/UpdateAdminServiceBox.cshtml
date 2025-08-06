@@ -1,0 +1,27 @@
+﻿@model LifeSureProject.Models.DataModels.TblServiceBox
+
+@{
+    ViewBag.Title = "UpdateAdminServiceBox";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hizmetler Box Sayfası Güncelleme</h2>
+
+<form method="post">
+    <input type="hidden" name="ServiceBoxId" value="@Model.ServiceBoxID" />
+    <br />
+    <label>Başlık</label>
+    <input for="Title" type="text" name="Title" value="@Model.Title" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Açıklama</label>
+    <textarea for="Description" name="Description" class="form-control" style="border:1px solid black" rows="5">@Model.Description</textarea>
+    <br />
+    <label>Image Url Adresi</label>
+    <input for="ImageUrl" type="text" name="ImageUrl" value="@Model.ImageUrl" class="form-control" style="border:1px solid black" />    
+    <br />
+    <a href="@Url.Action("Index", "AdminOpenImage", new { returnUrl = Url.Action("UpdateAdminServiceBox", "AdminOpenImage") })" class="btn btn-primary">Görsel Oluştur</a>
+
+    <button class="btn btn-success">Güncelle</button>
+</form>
+
+

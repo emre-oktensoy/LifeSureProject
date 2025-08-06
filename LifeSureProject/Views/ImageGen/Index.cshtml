@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Hugging Face - Resim Üretici</h2>
+
+<form method="post">
+    <div>
+        <label for="prompt">Prompt:</label>
+        <input type="text" name="prompt" id="prompt" required placeholder="Örnek: A cat playing piano" style="width: 300px;" />
+        <button type="submit">Resim Üret</button>
+    </div>
+</form>
+
+@if (ViewBag.ImagePath != null)
+{
+    <h4>Sunucuda Kaydedilen Resim:</h4>
+    <img src="@ViewBag.ImagePath" style="max-width:400px;" />
+    <br />
+    <a href="@ViewBag.ImagePath" download class="btn btn-success">Resmi İndir</a>
+}
+
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red;">@ViewBag.Error</p>
+}
+
+

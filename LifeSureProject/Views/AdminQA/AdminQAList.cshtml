@@ -1,0 +1,33 @@
+﻿@model List<LifeSureProject.Models.DataModels.TblFAQ>
+
+@{
+    ViewBag.Title = "AdminServiceBoxList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <br />
+    <br />
+    <h1>Sık Sorulan Sorular İçeriği</h1>
+    <table class="table table-hover">
+        <tr>
+
+            <th>Soru</th>
+            <th>Cevap</th>            
+            <th>Güncelleme</th>            
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Question</td>
+                <td>@item.Answer</td>                
+
+                <td><a href="/AdminQA/UpdateAdminQAList/@item.FAQId" class="btn btn-primary">Güncelle</a></td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+

@@ -1,0 +1,28 @@
+﻿@model LifeSureProject.Models.DataModels.TblFeature
+
+@{
+    ViewBag.Title = "AdminFeatureList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="container">
+    <br />
+    <br />
+    <h1>Özellikler İçeriği</h1>
+    <table class="table table-hover">
+        <tr>
+            <th>Başlık</th>
+            <th>Açıklama</th>            
+        </tr>
+
+
+        <tr>
+            <td>@Model.Title</td>
+            <td>@Model.Description</td>            
+        </tr>
+
+    </table>
+    <a href="/AdminFeature/UpdateAdminFeature/@Model.FeatureId" class="btn btn-primary"> Güncelle</a>
+</div>

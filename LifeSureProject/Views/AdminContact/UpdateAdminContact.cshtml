@@ -1,0 +1,26 @@
+﻿@model LifeSureProject.Models.DataModels.TblContact
+
+@{
+    ViewBag.Title = "UpdateAdminContact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>İletişim Güncelleme</h2>
+
+<form method="post">
+    <input type="hidden" name="ContactId" value="@Model.ContactId" />
+    <br />
+    <label>Adres</label>
+    <input for="Address" type="text" name="Address" value="@Model.Address" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Açıklama</label>
+    <input for="Mail" type="text" name="Mail" value="@Model.Mail" class="form-control" style="border:1px solid black" />
+    <br />
+    <label>Telefon</label>
+    <input for="Telephone" type="text" name="Telephone" value="@Model.Telephone" class="form-control" style="border:1px solid black" />
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</form>
+
+
